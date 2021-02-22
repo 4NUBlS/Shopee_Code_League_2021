@@ -1,0 +1,5 @@
+principal = float(input("Principal (S$) : "))
+interest = float(input("Interest (%) : "))
+print("Balance after 1st year: S$ {:.2f}".format(principal + ((principal*interest/100)*1)))
+print("Balance after 2st year: S$ {:.2f}".format(principal + ((principal*interest/100)*2)))
+print("Balance after 3st year: S$ {:.2f}".format(principal + ((principal*interest/100)*3)))
