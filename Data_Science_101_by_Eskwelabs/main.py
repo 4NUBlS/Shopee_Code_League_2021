@@ -1,4 +1,6 @@
 import spacy
+from spacy import displacy
+
 nlp = spacy.load('en_core_web_lg')
 
 doc = nlp('I am flying to Manila.')
@@ -43,3 +45,5 @@ doc = nlp('I want a green apple.')
 for token in doc:
     print(token.text, token.pos_, token.dep_, spacy.explain(token.dep_))
 print('='*30)
+
+displacy.serve(doc, style='dep')
