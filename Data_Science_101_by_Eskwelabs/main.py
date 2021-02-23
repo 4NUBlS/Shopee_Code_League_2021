@@ -46,4 +46,5 @@ for token in doc:
     print(token.text, token.pos_, token.dep_, spacy.explain(token.dep_))
 print('='*30)
 
+doc = nlp('The firm earned $1.5 million in 2017.')
 displacy.serve(doc, style='dep')
