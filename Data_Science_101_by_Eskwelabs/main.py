@@ -38,3 +38,8 @@ with doc.retokenize() as retokenizer:
 for token in doc:
     print(token.text, token.lemma_, token.pos_)
 print('='*30)
+
+doc = nlp('I want a green apple.')
+for token in doc:
+    print(token.text, token.pos_, token.dep_, spacy.explain(token.dep_))
+print('='*30)
