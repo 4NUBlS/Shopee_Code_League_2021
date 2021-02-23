@@ -1,5 +1,6 @@
 import spacy
 from spacy import displacy
+from IPython.core.display import display, HTML
 
 nlp = spacy.load('en_core_web_lg')
 
@@ -47,4 +48,30 @@ for token in doc:
 print('='*30)
 
 doc = nlp('The firm earned $1.5 million in 2017.')
+phrase = ''
+for token in doc:
+    if token.tag_ == '$':
+        phrase = token.text
+        i = token.i+1
+        while doc[i].tag_ == 'CD':
+            phrase += doc[i].text + ''
+            i += 1
+        phrase = phrase[:-1]
+        print(phrase)
+print('='*30)
+
+print(spacy.explain('CD'))
+print('='*30)
+
+doc = nlp('I want to fly to Manila.')
+html = displacy.render(doc, style='ent', page=True)
+display(HTML(html))
+print('='*30)
+
+print(spacy.explain('GPE'))
+print(spacy.explain('ORG'))
+print(nlp('apple').similarity(nlp('banana')))
+print(nlp('king').similarity(nlp('queen')))
+print('='*30)
+
 displacy.serve(doc, style='dep')
