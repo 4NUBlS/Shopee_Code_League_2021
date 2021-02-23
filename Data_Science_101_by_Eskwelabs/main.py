@@ -32,4 +32,9 @@ print([w.text for w in doc])
 print('='*30)
 
 with doc.retokenize() as retokenizer:
-    retokenizer.merge(doc[])
+    retokenizer.merge(doc[1:4])
+with doc.retokenize() as retokenizer:
+    retokenizer.merge(doc[7:9])
+for token in doc:
+    print(token.text, token.lemma_, token.pos_)
+print('='*30)
