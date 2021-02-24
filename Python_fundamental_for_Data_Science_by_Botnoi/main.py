@@ -24,3 +24,14 @@ for i in n:
     sums += i
 print(sums)
 print("="*30)
+
+# Q&A_4
+def sum_list(inputlist):
+    sum_n = 0
+    for i in inputlist:
+        if (i % 2) == 0:
+            sum_n += i
+    return sum_n
+inputlist = [1, 10, 12, 41, 23, 11, 20, 41, 29, 33, 22, 56]
+print(sum_list(inputlist))
+print("="*30)
