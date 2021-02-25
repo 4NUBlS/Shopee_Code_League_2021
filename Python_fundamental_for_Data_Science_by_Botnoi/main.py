@@ -16,6 +16,8 @@ def calculategrade(myscore):
     elif myscore < 50:
         grade = "F"
     return grade
+print(calculategrade(80))
+print("="*30)
 
 # Q&A_3
 n = [53, 1, 2, 67, 543, 3, 8, -9, 43, 12]
